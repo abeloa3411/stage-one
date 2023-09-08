@@ -22,7 +22,7 @@ function getCurrentDay() {
   return currentDayOfWeek;
 }
 
-app.get("/api/user", (req, res) => {
+app.get("/api", (req, res) => {
   const { slack_name, track } = req.query;
 
   if (!slack_name || !track) {
@@ -36,7 +36,7 @@ app.get("/api/user", (req, res) => {
     current_day: getCurrentDay(),
     utc_time: new Date().toISOString(),
     track,
-    github_file_url: "https://github.com/abeloa3411/",
+    github_file_url: "https://github.com/abeloa3411/stage-one",
     github_repo_url: "https://github.com/abeloa3411/stage-one",
     status_code: 200,
   };
