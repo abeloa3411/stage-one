@@ -35,7 +35,7 @@ app.get("/api", (req, res) => {
   const user = {
     slack_name,
     current_day: getCurrentDay(),
-    utc_time: new Date().toISOString(),
+    utc_time: new Date().toISOString().slice(0, -5) + "Z",
     track,
     github_file_url:
       "https://github.com/abeloa3411/stage-one.main/blob/index.js",
