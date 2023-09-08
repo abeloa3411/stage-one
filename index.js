@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3000; // You can change this to any port you prefer
 
 function getCurrentDay() {
   const currentDate = new Date();
@@ -22,7 +22,8 @@ function getCurrentDay() {
   return currentDayOfWeek;
 }
 
-app.get("/api ", (req, res) => {
+// Endpoint to get specific information based on query parameters
+app.get("/api", (req, res) => {
   const { slack_name, track } = req.query;
 
   if (!slack_name || !track) {
